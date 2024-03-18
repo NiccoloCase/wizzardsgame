@@ -5,4 +5,6 @@ module org.spotlive.wizzardsgame {
 
     opens org.spotlive.wizzardsgame to javafx.fxml;
     exports org.spotlive.wizzardsgame;
+    exports org.spotlive.wizzardsgame.screens;
+    opens org.spotlive.wizzardsgame.screens to javafx.fxml;
 }
