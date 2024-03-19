@@ -1,13 +1,20 @@
 package org.spotlive.wizzardsgame.screens;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import org.spotlive.wizzardsgame.Main;
+import org.spotlive.wizzardsgame.characters.Player;
 
-public class StartMenuScreen extends GameScreen {
+public class StartMenuScreen extends Screen {
+
+
+
+
+
 
     public StartMenuScreen() {
         super();
+
     }
 
     @Override
@@ -19,8 +26,7 @@ public class StartMenuScreen extends GameScreen {
 
         // Imposta un'azione per il pulsante Play (puoi aggiungere azioni anche per gli altri pulsanti)
         playButton.setOnAction(event -> {
-            // Azione da eseguire quando il pulsante Play viene premuto
-            // Puoi implementare il codice per passare alla schermata di gioco qui
+            Main.gameStateManager.startGame();
         });
 
         // Creazione di un layout per organizzare i pulsanti verticalmente
@@ -29,6 +35,8 @@ public class StartMenuScreen extends GameScreen {
 
         // Imposta il layout come contenuto della schermata
         screenView = new Pane(layout);
+
+
     }
 
     @Override

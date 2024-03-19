@@ -1,25 +1,27 @@
 package org.spotlive.wizzardsgame.screens;
 
-import javafx.scene.Node;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.Button;
+import org.spotlive.wizzardsgame.Main;
+import org.spotlive.wizzardsgame.characters.Player;
 
-public class GameScreen {
+public class GameScreen extends Screen {
 
-    public Pane screenView;
+    Player player;
 
-    GameScreen() {
-        // Crea la vista dello schermo di gioco
-        screenView = new Pane();
+    public GameScreen() {
+        super();
+        player = new Player();
+        screenView.getChildren().add(player.getView());
+
+
+        // Aggiunge bottone per menu
+        Button menuButton = new Button("Menu");
+        menuButton.setOnAction(event -> {
+            Main.gameStateManager.openMenu();
+        });
+        screenView.getChildren().add(menuButton);
+
+
     }
 
-    public void update() {
-        // ...
-    }
-
-    public void init() {
-    }
-
-    public Node getView() {
-        return screenView;
-    }
 }
