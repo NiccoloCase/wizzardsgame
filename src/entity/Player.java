@@ -131,7 +131,7 @@ public class Player extends Entity {
                     }
                     break;
                 case "Tejon":
-                    gp.ui.showMessage("GinBro_Mode.Activate");
+                    gp.ui.showMessage("Mira El TeJon");
                     break;
                 case "Gin":
                     speed+=2;
