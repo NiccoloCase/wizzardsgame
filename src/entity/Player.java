@@ -132,12 +132,14 @@ public class Player extends Entity {
                     break;
                 case "Tejon":
                     gp.ui.showMessage("Mira El TeJon");
+                    gp.ui.gameFinished=true;
                     break;
                 case "Gin":
                     speed+=2;
                     gp.obj[i]=null;
                     gp.ui.showMessage("GinBro_Mode.Activate");
                     break;
+
             }
 
             //test

@@ -6,18 +6,27 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.text.DecimalFormat;
 
 //  ALL THE ON-SCREEN UI
 public class UI {
     GamePanel gp;
-    Font italic_40;
+    Font italic_40,arial_60B;
     BufferedImage penImage;
     public boolean messageOn = false;
     public String message="";
     int messageCounter =0;
+    public boolean gameFinished=false;
+
+    double playTime;
+    DecimalFormat dFormat = new DecimalFormat("#0.00"); //this is to display only two decimals in the time counter
+
+
+
     public UI(GamePanel gp){
         this.gp=gp;
         italic_40=new Font("Italic", Font.ITALIC, 40);
+        arial_60B=new Font("Arial", Font.BOLD, 60);
         OBJ_Pen pen = new OBJ_Pen();
         penImage=pen.image;
 
@@ -28,25 +37,63 @@ public class UI {
         messageOn=true;
     }
     public void draw(Graphics2D g2){
-        g2.setFont(italic_40);
-        g2.setColor((Color.white) );
-        g2.drawImage(penImage,gp.tileSize/2,gp.tileSize/2,gp.tileSize,gp.tileSize,null);
-        g2.drawString("x"+gp.player.hasPen,74,65);
+        if(gameFinished){
 
-        //MESSAGE
-        if(messageOn){
-            g2.setFont(g2.getFont().deriveFont(30F));
-            g2.drawString(message,gp.tileSize/2,gp.tileSize*5);
+            g2.setFont(italic_40);
+            g2.setColor((Color.white) );
 
-            messageCounter++;
-            if(messageCounter > 120){
-                messageCounter=0;
-                messageOn=false;
-            }
+            String text;
+            int textLength;
+            int x;
+            int y;
+
+            text="MIRA EL TEJON!!!";
+            textLength= (int)g2.getFontMetrics().getStringBounds(text,g2).getWidth(); //returns text's length
+
+            x= gp.screenWidth/2-textLength/2;
+            y=gp.screenHeight/2-(gp.tileSize*3);
+            g2.drawString(text,x,y);
+
+            text="Your Time is :"+ dFormat.format(playTime)+"!";
+            textLength= (int)g2.getFontMetrics().getStringBounds(text,g2).getWidth(); //returns text's length
+            x= gp.screenWidth/2-textLength/2;
+            y=gp.screenHeight/2+(gp.tileSize*4);
+            g2.drawString(text,x,y);
+
+            g2.setFont(arial_60B);
+            g2.setColor((Color.YELLOW) );
+            text="Congratulations!!!";
+            textLength= (int)g2.getFontMetrics().getStringBounds(text,g2).getWidth(); //returns text's length
+            x= gp.screenWidth/2-textLength/2;
+            y=gp.screenHeight/2+(gp.tileSize*2);
+            g2.drawString(text,x,y);
+
+            gp.gameThread=null;
+
+
+        }
+        else{
+            g2.setFont(italic_40);
+            g2.setColor((Color.white) );
+            g2.drawImage(penImage,gp.tileSize/2,gp.tileSize/2,gp.tileSize,gp.tileSize,null);
+            g2.drawString("x"+gp.player.hasPen,74,65);
+
+            //TIME
+            playTime+=(double)1/60;
+            g2.drawString("Time:"+dFormat.format(playTime),gp.tileSize*11,65);
+            //MESSAGE
+            if(messageOn){
+                g2.setFont(g2.getFont().deriveFont(30F));
+                g2.drawString(message,gp.tileSize/2,gp.tileSize*5);
+
+                messageCounter++;
+                if(messageCounter > 120){
+                    messageCounter=0;
+                    messageOn=false;
         }
 
-
-
+            }
+        }
     }
 }
 
