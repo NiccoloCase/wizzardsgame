@@ -19,11 +19,14 @@ public class TileManager {
     }
     public void getTileImage() {
         int tileIndex = 0;
-        for (int y = 0; y < 32; y++) {
-            for (int x = 0; x < 73; x++) { // 77 righe e 32 colonne
+        for (int y = 0; y < 33; y++) {
+            for (int x = 0; x < 74; x++) { // 77 righe e 32 colonne
                 try {
                     tile[tileIndex] = new Tile();
                     tile[tileIndex].image = ImageIO.read(new File(String.format("res/tiles/ElevMapTiles64/tile_%d_%d.jpg", y * 64, x * 64)));
+                    if (y==32 || x== 73 || y==0 || x==0){
+                        tile[tileIndex].collision=true;
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();// Handle the exception (e.g., log an error message or display a user-friendly message)
                 }
