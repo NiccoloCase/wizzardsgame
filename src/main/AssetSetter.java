@@ -36,8 +36,8 @@ public class AssetSetter {
         gp.obj[5].worldY = 22 * gp.tileSize;
 
         gp.obj[6] = new OBJ_Tejon();
-        gp.obj[6].worldX = 10 * gp.tileSize;
-        gp.obj[6].worldY = 7 * gp.tileSize;
+        gp.obj[6].worldX = 31 * gp.tileSize;
+        gp.obj[6].worldY = 72 * gp.tileSize;
 
 
 
