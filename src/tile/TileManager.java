@@ -24,9 +24,38 @@ public class TileManager {
                 try {
                     tile[tileIndex] = new Tile();
                     tile[tileIndex].image = ImageIO.read(new File(String.format("res/tiles/ElevMapTiles64/tile_%d_%d.jpg", y * 64, x * 64)));
+
                     if (y==32 || x== 73 || y==0 || x==0){
                         tile[tileIndex].collision=true;
                     }
+                    /*if (x==9 && (y!=28 )) {
+                            tile[tileIndex].collision=true;
+                    }
+                    if (x==12 && (y!= 8 )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==21 && (y!= 29 )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==24 && (y!= 6 && y!= 7 )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==33 && (y!= 24 )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==36 && (y!= 5 && y!= 6)) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==46 && (y!= 29 && y!= 30 )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    */if (x==49 && (y!= 5 && y!= 6 )) {
+                        tile[tileIndex].collision=true;
+                    }
+
+
+
+
                 } catch (IOException e) {
                     e.printStackTrace();// Handle the exception (e.g., log an error message or display a user-friendly message)
                 }
