@@ -25,10 +25,12 @@ public class TileManager {
                     tile[tileIndex] = new Tile();
                     tile[tileIndex].image = ImageIO.read(new File(String.format("res/tiles/ElevMapTiles64/tile_%d_%d.jpg", y * 64, x * 64)));
 
+                    //BORDI MAPPA
                     if (y==32 || x== 73 || y==0 || x==0){
                         tile[tileIndex].collision=true;
                     }
-                    /*if (x==9 && (y!=28 )) {
+                    //LINEE ORIZZONTALI PIANI
+                    if (x==9 && (y!=28 )) {
                             tile[tileIndex].collision=true;
                     }
                     if (x==12 && (y!= 8 )) {
@@ -49,7 +51,16 @@ public class TileManager {
                     if (x==46 && (y!= 29 && y!= 30 )) {
                         tile[tileIndex].collision=true;
                     }
-                    */if (x==49 && (y!= 5 && y!= 6 )) {
+                    if (x==49 && (y!= 5 && y!= 6 )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==58 && (y!= 25 && y!= 26 )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==61 && (y!= 6  )) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==70 && ( y!=28 )) {
                         tile[tileIndex].collision=true;
                     }
 
