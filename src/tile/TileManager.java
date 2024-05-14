@@ -36,7 +36,7 @@ public class TileManager {
                     if (x==12 && (y!= 8 )) {
                         tile[tileIndex].collision=true;
                     }
-                    */if (x==21 && (y!= 29 )) {
+                    if (x==21 && (y!= 29 )) {
                         tile[tileIndex].collision=true;
                     }
                     if (x==24 && (y!= 6 && y!= 7 )) {
@@ -48,13 +48,13 @@ public class TileManager {
                     if (x==36 && (y!= 5 && y!= 6)) {
                         tile[tileIndex].collision=true;
                     }
-                    if (x==46 && (y!= 29 && y!= 30 )) {
+                    if (x==45 && (y!= 29 && y!= 30 )) {
                         tile[tileIndex].collision=true;
                     }
-                    if (x==49 && (y!= 5 && y!= 6 )) {
+                    if (x==48 && (y!= 5 && y!= 6 )) {
                         tile[tileIndex].collision=true;
                     }
-                    if (x==58 && (y!= 25 && y!= 26 )) {
+                    */if (x==58 && (y!= 25 && y!= 26 )) {
                         tile[tileIndex].collision=true;
                     }
                     if (x==61 && (y!= 6  )) {
@@ -72,6 +72,15 @@ public class TileManager {
                         tile[tileIndex].collision=true;
                     }
                     if (y==21 && x >24 && x<33 && (x!=27)) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (y==22 && x >36 && x<46 && (x!=42)) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (y==15 && x >48 && x<58 && (x!=54)) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (y==23 && x >61 && x<70 && (x!=66)) {
                         tile[tileIndex].collision=true;
                     }
 
