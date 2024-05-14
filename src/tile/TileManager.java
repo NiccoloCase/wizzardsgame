@@ -30,13 +30,13 @@ public class TileManager {
                         tile[tileIndex].collision=true;
                     }
                     //LINEE ORIZZONTALI PIANI
-                    if (x==9 && (y!=28 )) {
+                    /*if (x==9 && (y!=28 )) {
                             tile[tileIndex].collision=true;
                     }
                     if (x==12 && (y!= 8 )) {
                         tile[tileIndex].collision=true;
                     }
-                    if (x==21 && (y!= 29 )) {
+                    */if (x==21 && (y!= 29 )) {
                         tile[tileIndex].collision=true;
                     }
                     if (x==24 && (y!= 6 && y!= 7 )) {
@@ -61,6 +61,17 @@ public class TileManager {
                         tile[tileIndex].collision=true;
                     }
                     if (x==70 && ( y!=28 )) {
+                        tile[tileIndex].collision=true;
+                    }
+
+                    //STANZA PIANO 1
+                    if (y==24 && x<9 && x!=4) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (y==25 && x >12 && x<21 && (x!=15)) {
+                        tile[tileIndex].collision=true;
+                    }
+                    if (y==21 && x >24 && x<33 && (x!=27)) {
                         tile[tileIndex].collision=true;
                     }
 
