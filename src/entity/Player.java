@@ -36,8 +36,8 @@ public class Player extends Entity {
 
     }
     public  void setDefaultValues(){
-        worldX=gp.tileSize; //player (starting) position on the world map; not in the display
-        worldY=gp.tileSize;
+        worldX=gp.tileSize*13; //player (starting) position on the world map; not in the display
+        worldY=gp.tileSize*15;
         speed=9;
         direction = "down";
     }

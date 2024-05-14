@@ -36,7 +36,7 @@ public class TileManager {
                     if (x==12 && (y!= 8 )) {
                         tile[tileIndex].collision=true;
                     }
-                    if (x==21 && (y!= 29 )) {
+                    */if (x==21 && (y!= 29 )) {
                         tile[tileIndex].collision=true;
                     }
                     if (x==24 && (y!= 6 && y!= 7 )) {
@@ -54,7 +54,7 @@ public class TileManager {
                     if (x==48 && (y!= 5 && y!= 6 )) {
                         tile[tileIndex].collision=true;
                     }
-                    */if (x==58 && (y!= 25 && y!= 26 )) {
+                    if (x==58 && (y!= 25 && y!= 26 )) {
                         tile[tileIndex].collision=true;
                     }
                     if (x==61 && (y!= 6  )) {
@@ -64,8 +64,8 @@ public class TileManager {
                         tile[tileIndex].collision=true;
                     }
 
-                    //STANZA PIANO 1
-                    if (y==24 && x<9 && x!=4) {
+                    //MURA VERTICALI STANZE
+                    if (y==23 && x<9 && x!=4) {
                         tile[tileIndex].collision=true;
                     }
                     if (y==25 && x >12 && x<21 && (x!=15)) {
@@ -83,6 +83,50 @@ public class TileManager {
                     if (y==23 && x >61 && x<70 && (x!=66)) {
                         tile[tileIndex].collision=true;
                     }
+
+                    //STANZA 0
+                    if( x==1 && y>24){
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==3 || x==2)&& (y==27 ||y==28)){ //tavolo marrone
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==3 ||x==4 ) && (y==25 || y==26 )){ //banco alto sx
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==6 ||x==7 ) && (y==25 || y==26 )){ //banco basso sx
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==3 ||x==4 ) && (y==30 || y==31 )){ //banco alto dx
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==6 ||x==7 ) && (y==30 || y==31 )){ //banco basso dx
+                        tile[tileIndex].collision=true;
+                    }
+
+                    //STANZA 1
+                    if( x==13 && y>25){
+                        tile[tileIndex].collision=true;
+                    }
+                    if( x==14 && y>25 && y<28){    //scaffali  alto dsx
+                        tile[tileIndex].collision=true;
+                    }
+                    if( x>13 && x<17 && y>29 ){  //reception + scaffale mid dx
+                        tile[tileIndex].collision=true;
+                    }
+                    if( x==16 && y>25 && y<28){  //scaffale mid sx
+                        tile[tileIndex].collision=true;
+                    }
+                    if( ((x==18 && y==26) || (x==19 && (y==26 ||y==27)))){  //scaffale basso sx
+                        tile[tileIndex].collision=true;
+                    }
+                    if( ((x==18 && y==30) || (x==19 && y>29 ))){  //scaffale basso dx
+                        tile[tileIndex].collision=true;
+                    }
+
+
+
+
 
 
 
