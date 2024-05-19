@@ -36,7 +36,7 @@ public class TileManager {
                     if (x==12 && (y!= 8 )) {
                         tile[tileIndex].collision=true;
                     }
-                    */if (x==21 && (y!= 29 )) {
+                    if (x==21 && (y!= 29 )) {
                         tile[tileIndex].collision=true;
                     }
                     if (x==24 && (y!= 6 && y!= 7 )) {
@@ -57,7 +57,7 @@ public class TileManager {
                     if (x==58 && (y!= 25 && y!= 26 )) {
                         tile[tileIndex].collision=true;
                     }
-                    if (x==61 && (y!= 6  )) {
+                    */if (x==61 && (y!= 6  )) {
                         tile[tileIndex].collision=true;
                     }
                     if (x==70 && ( y!=28 )) {
@@ -85,7 +85,7 @@ public class TileManager {
                     }
 
                     //STANZA 0
-                    if( x==1 && y>24){
+                    if( x==1 && y>23){
                         tile[tileIndex].collision=true;
                     }
                     if( (x==3 || x==2)&& (y==27 ||y==28)){ //tavolo marrone
@@ -123,6 +123,104 @@ public class TileManager {
                     if( ((x==18 && y==30) || (x==19 && y>29 ))){  //scaffale basso dx
                         tile[tileIndex].collision=true;
                     }
+
+                    //STANZA 2
+                    if( x>24 && x<27 && y>20){  //lavagne e muro alto
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x>26 && x<29) && (y==23 || y==24)){  //tavolo marrone
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==31 ) && (y==21 || y==22)){  //bancone sx parte bassa
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==27) && (y>26 && y<31)){  //banchi alto
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==29) && (y>26 && y<31)){  //banchi mezzo
+                        tile[tileIndex].collision=true;
+                    }
+                    if( (x==31) && (y>26 && y<31)){  //banchi basso
+                        tile[tileIndex].collision=true;
+                    }
+
+                    //STANZA 3
+                    if (x==37) {
+                        tile[tileIndex].collision=true; //parete alta
+                    }
+                    if (x==38 && y>30) {
+                        tile[tileIndex].collision=true; //quadrato nero
+                    }
+                    if (x==40 && y>22 && (y!=24 && y!=28)) { //parete basssa stanze alte
+                        tile[tileIndex].collision=true;
+                    }
+                    if (x==41 && (y==26 || y==27 || y==29 || y==30)) { //librerie corridoio
+                        tile[tileIndex].collision=true;
+                    }
+                    if(x>37 && x<41 && y==26) { //parete verticale tra due stanze
+                        tile[tileIndex].collision=true;
+                    }
+
+                    //STANZA 4
+                    if ((x==49 || x==50)&& y>15) {
+                        tile[tileIndex].collision=true; //parete alta
+                    }
+                    if ((x<56 && x>50)&& y==23) {
+                        tile[tileIndex].collision=true; //parete u lato sx
+                    }
+                    if(x==55 && y==24){
+                        tile[tileIndex].collision=true; //parete u lato basso
+                    }
+                    if ((x<56 && x>50)&& y==26) {
+                        tile[tileIndex].collision=true; //parete u lato dx
+                    }
+                    if(x==52 && y==17){
+                        tile[tileIndex].collision=true; //palo alto sx
+                    }
+                    if(x==52 && y==21){
+                        tile[tileIndex].collision=true; //palo alto dx
+                    }
+                    if(x==55 && y==21){
+                        tile[tileIndex].collision=true; //palo baso dx
+                    }
+                    if(x==55 && y==17){
+                        tile[tileIndex].collision=true; //palo baso sx
+                    }
+                    if ((x<55 && x>51)&& (y<31 && y>27)) {
+                        tile[tileIndex].collision=true; //quadrato tappeto
+                    }
+                    if (x==55 && y==30) {
+                        tile[tileIndex].collision=true; //quadrato nero
+                    }
+
+                    //STANZA 5
+                    if (x==62 && y>26) {
+                        tile[tileIndex].collision=true; //parete alta
+                    }
+                    if (x==64 && y>23 && y<28) {
+                        tile[tileIndex].collision=true; //parete scala alta
+                    }
+                    if (x==66 && y>25 && y<31) {
+                        tile[tileIndex].collision=true; //parete alta scale doppie
+                    }
+                    if (x==68 && y>23 && y<27) {
+                        tile[tileIndex].collision=true; //parete bassa sx scale doppie
+                    }
+                    if (x==68 && y>29) {
+                        tile[tileIndex].collision=true; //parete bassa dx scale doppie
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
