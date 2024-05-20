@@ -40,9 +40,11 @@ public class GamePanel extends JPanel implements Runnable{
 
     Thread gameThread;
     public UI ui = new UI(this);
+
     //ENTITY AND OBJECT
     public Player player =new Player(this,keyH);
     public SuperObject obj[] =new SuperObject[10];
+    public Entity npc[] = new Entity[10];
 
 
 
@@ -57,7 +59,9 @@ public class GamePanel extends JPanel implements Runnable{
         this.setFocusable(true);
     }
     public void setupGame(){
+
         aSetter.setObject();
+        aSetter.setNPC();
     }
 
     public void startGameThread(){
@@ -93,7 +97,15 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
     public void update(){
+        //PLAYER
         player.update();
+        // NPC
+        for(int i=0;i<npc.length;i++){
+            if(npc[i]!=null){
+                npc[i].update();
+            }
+        }
+
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -103,9 +115,15 @@ public class GamePanel extends JPanel implements Runnable{
         tileM.draw(g2);
 
         //OBJECT
-        for(int i = 0; i<obj.length;i++){
+        for (int i = 0; i<obj.length;i++){
             if(obj[i]!= null){
                 obj[i].draw(g2,this);
+            }
+        }
+        //NPC
+        for (int i=0;i<npc.length;i++){
+            if(npc[i] != null){
+                npc[i].draw(g2);
             }
         }
 

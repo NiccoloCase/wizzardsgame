@@ -1,5 +1,6 @@
 package main;
 //test
+import entity.NPC_Explorer;
 import object.OBJ_Door;
 import object.OBJ_Gin;
 import object.OBJ_Pen;
@@ -38,9 +39,12 @@ public class AssetSetter {
         gp.obj[6] = new OBJ_Tejon();
         gp.obj[6].worldX = 31 * gp.tileSize;
         gp.obj[6].worldY = 72 * gp.tileSize;
+    }
 
-
-
+    public void setNPC(){
+        gp.npc[0] = new NPC_Explorer(gp);
+        gp.npc[0].worldX=gp.tileSize*21;
+        gp.npc[0].worldY=gp.tileSize*23;
 
     }
 }

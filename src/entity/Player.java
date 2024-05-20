@@ -11,14 +11,14 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class Player extends Entity {
-    GamePanel gp;
     KeyHandler keyH;
 
     public final int screenX; //where we draw player on the screen;
     public final int screenY;
     public int hasPen=0; //how many pens the player has
     public Player(GamePanel gp, KeyHandler keyH) {
-        this.gp=gp;
+        super(gp);
+
         this.keyH=keyH;
         screenX=gp.screenWidth/2 -(gp.tileSize/2);
         screenY = gp.screenHeight/2-(gp.tileSize/2);
@@ -41,7 +41,7 @@ public class Player extends Entity {
         speed=7;
         direction = "down";
     }
-    private void getPlayerImage() {
+    private void getPlayerImage() {  //è ridondante fare la stessa cosa per ogni personaggio quando potrei fare un metodo in Entity, ma la soluzione del tutorial è un pò diversa dalla mia e non voglio fixarla ora
         try {
             up1 = ImageIO.read(new File("res/player/wizard_up_1.png"));
             up2 = ImageIO.read(new File("res/player/wizard_up_2.png"));
@@ -79,6 +79,10 @@ public class Player extends Entity {
             // CHECK OBJECT COLLISION
             int objIndex = gp.cChecker.checkObject(this,true);
             pickUpObject(objIndex);
+
+            //CHECK NPC COLLISION
+            int npcIndex = gp.cChecker.checkEntity(this,gp.npc);
+            interactNPC(npcIndex);
 
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
             if(!collisionOn){
@@ -142,10 +146,15 @@ public class Player extends Entity {
 
             }
 
-            //test
+
 
         }
 
+    }
+    public void interactNPC(int i){
+        if(i != 999){
+            System.out.println(("you are hitting an npc!"));
+        }
     }
 
     public void draw(Graphics2D g2){
