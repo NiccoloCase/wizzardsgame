@@ -23,6 +23,7 @@ public class Entity {
     public boolean isAGiver=false; //stabilisce quali NPC droppano item
     public int itemToGive=0; //lo uso per stabilire quale item viene droppato
 
+
     public Entity(GamePanel gp){
         this.gp = gp;
     }

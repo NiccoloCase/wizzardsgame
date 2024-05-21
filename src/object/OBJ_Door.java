@@ -5,18 +5,20 @@ import java.awt.*;
 import java.io.File;
 
 public class OBJ_Door extends SuperObject {
-    public OBJ_Door(){
+    public String accessToRoom;
+    public boolean unlocked =false;
+    public int numAttraversamenti=0;
+    public OBJ_Door(String accessToRoom){
         name= "Door";
+        this.accessToRoom = accessToRoom;
         solidArea=new Rectangle(0,0,64,64);
         try{
-            image = ImageIO.read(new File("res/objects/door.png"));
+            image = ImageIO.read(new File(""));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         collision=true;
-
-
     }
 
 }

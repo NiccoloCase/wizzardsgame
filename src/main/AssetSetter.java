@@ -7,6 +7,8 @@ import object.OBJ_Gin;
 import object.OBJ_Pen;
 import object.OBJ_Tejon;
 
+import java.awt.*;
+
 public class AssetSetter {
     GamePanel gp;
     public AssetSetter(GamePanel gp){
@@ -18,91 +20,92 @@ public class AssetSetter {
 
 
         //BLOCCO PORTE 0
-        gp.obj[3] = new OBJ_Door(); //ingresso stanza 0
+        gp.obj[3] = new OBJ_Door("Aula Comunista"); //ingresso stanza 0
         gp.obj[3].worldX = 24 * gp.tileSize;
         gp.obj[3].worldY = 4 * gp.tileSize;
+        gp.obj[3].solidArea=new Rectangle(0,0,48,48);
 
-        gp.obj[4] = new OBJ_Door(); //uscita stanza 0
+        gp.obj[4] = new OBJ_Door("Corridoio 0"); //uscita stanza 0
         gp.obj[4].worldX = 28 * gp.tileSize;
         gp.obj[4].worldY = 9 * gp.tileSize;
 
-        gp.obj[5] = new OBJ_Door(); //uscita corridoio 0
+        gp.obj[5] = new OBJ_Door("Piano 1"); //uscita corridoio 0
         gp.obj[5].worldX = 8 * gp.tileSize;
         gp.obj[5].worldY = 12 * gp.tileSize;
 
         //BLOCCO PORTE 1
-        gp.obj[6] = new OBJ_Door(); //ingresso stanza 1
+        gp.obj[6] = new OBJ_Door("Biblioteja Novoli"); //ingresso stanza 1
         gp.obj[6].worldX = 25 * gp.tileSize;
         gp.obj[6].worldY = 15 * gp.tileSize;
 
-        gp.obj[7] = new OBJ_Door(); //uscita stanza 1
+        gp.obj[7] = new OBJ_Door("Corridoio 1"); //uscita stanza 1
         gp.obj[7].worldX = 29 * gp.tileSize;
         gp.obj[7].worldY = 21 * gp.tileSize;
 
-        gp.obj[8] = new OBJ_Door(); //uscita corridoio 1
+        gp.obj[8] = new OBJ_Door("Piano 2"); //uscita corridoio 1
         gp.obj[8].worldX = 6 * gp.tileSize;
         gp.obj[8].worldY = 24 * gp.tileSize;
-        gp.obj[9] = new OBJ_Door(); //uscita corridoio 1.1
+        gp.obj[9] = new OBJ_Door("Piano 2"); //uscita corridoio 1.1
         gp.obj[9].worldX = 7 * gp.tileSize;
         gp.obj[9].worldY = 24 * gp.tileSize;
 
         //BLOCCO PORTE 2
-        gp.obj[10] = new OBJ_Door(); //ingresso stanza 2
+        gp.obj[10] = new OBJ_Door("Aula 217"); //ingresso stanza 2
         gp.obj[10].worldX = 21 * gp.tileSize;
         gp.obj[10].worldY = 27 * gp.tileSize;
 
-        gp.obj[11] = new OBJ_Door(); //uscita stanza 2
+        gp.obj[11] = new OBJ_Door("Corridoio 2"); //uscita stanza 2
         gp.obj[11].worldX = 24 * gp.tileSize;
         gp.obj[11].worldY = 33 * gp.tileSize;
 
-        gp.obj[12] = new OBJ_Door(); //uscita corridoio 2
+        gp.obj[12] = new OBJ_Door("Piano 3"); //uscita corridoio 2
         gp.obj[12].worldX = 5 * gp.tileSize;
         gp.obj[12].worldY = 36 * gp.tileSize;
-        gp.obj[13] = new OBJ_Door(); //uscita corridoio 2.1
+        gp.obj[13] = new OBJ_Door("Piano 3"); //uscita corridoio 2.1
         gp.obj[13].worldX = 6 * gp.tileSize;
         gp.obj[13].worldY = 36 * gp.tileSize;
 
         //BLOCCO PORTE 3
-        gp.obj[14] = new OBJ_Door(); //ingresso stanza 3
+        gp.obj[14] = new OBJ_Door("Casa Caps"); //ingresso stanza 3
         gp.obj[14].worldX = 22 * gp.tileSize;
         gp.obj[14].worldY = 42 * gp.tileSize;
 
-        gp.obj[15] = new OBJ_Door(); //uscita stanza 3
+        gp.obj[15] = new OBJ_Door("Corridoio 3"); //uscita stanza 3
         gp.obj[15].worldX = 29 * gp.tileSize;
         gp.obj[15].worldY = 45 * gp.tileSize;
-        gp.obj[16] = new OBJ_Door(); //uscita stanza 3.1
+        gp.obj[16] = new OBJ_Door("Corridoio 3"); //uscita stanza 3.1
         gp.obj[16].worldX = 30 * gp.tileSize;
         gp.obj[16].worldY = 45 * gp.tileSize;
 
-        gp.obj[17] = new OBJ_Door(); //uscita corridoio 3
+        gp.obj[17] = new OBJ_Door("Piano 4"); //uscita corridoio 3
         gp.obj[17].worldX = 5 * gp.tileSize;
         gp.obj[17].worldY = 48 * gp.tileSize;
-        gp.obj[18] = new OBJ_Door(); //uscita corridoio 3.1
+        gp.obj[18] = new OBJ_Door("Piano 4"); //uscita corridoio 3.1
         gp.obj[18].worldX = 6 * gp.tileSize;
         gp.obj[18].worldY = 48 * gp.tileSize;
 
         //BLOCCO PORTE 4
-        gp.obj[19] = new OBJ_Door(); //ingresso stanza 4
+        gp.obj[19] = new OBJ_Door("Palestra CUS"); //ingresso stanza 4
         gp.obj[19].worldX = 15 * gp.tileSize;
         gp.obj[19].worldY = 54 * gp.tileSize;
 
-        gp.obj[20] = new OBJ_Door(); //uscita stanza 4
+        gp.obj[20] = new OBJ_Door("Corridoio 4"); //uscita stanza 4
         gp.obj[20].worldX = 26 * gp.tileSize;
         gp.obj[20].worldY = 58 * gp.tileSize;
-        gp.obj[21] = new OBJ_Door(); //uscita stanza 4.1
+        gp.obj[21] = new OBJ_Door("Corridoio 4"); //uscita stanza 4.1
         gp.obj[21].worldX = 25 * gp.tileSize;
         gp.obj[21].worldY = 58 * gp.tileSize;
 
-        gp.obj[22] = new OBJ_Door(); //uscita corridoio 4
+        gp.obj[22] = new OBJ_Door("Piano 5"); //uscita corridoio 4
         gp.obj[22].worldX = 6 * gp.tileSize;
         gp.obj[22].worldY = 61 * gp.tileSize;
 
         //BLOCCO PORTE 5
-        gp.obj[23] = new OBJ_Door(); //ingresso stanza 5
+        gp.obj[23] = new OBJ_Door("SH"); //ingresso stanza 5
         gp.obj[23].worldX = 23 * gp.tileSize;
         gp.obj[23].worldY = 66 * gp.tileSize;
 
-        gp.obj[24] = new OBJ_Door(); //uscita stanza 5
+        gp.obj[24] = new OBJ_Door("Corridoio 5"); //uscita stanza 5
         gp.obj[24].worldX = 28 * gp.tileSize;
         gp.obj[24].worldY = 70 * gp.tileSize;
 
@@ -155,7 +158,7 @@ public class AssetSetter {
         gp.npc[5].isAGiver=true;
 
         gp.npc[6] = new NPC_Explorer(gp); //pre stanza 2
-        gp.npc[6].worldX=gp.tileSize*4;
+        gp.npc[6].worldX=gp.tileSize*6;
         gp.npc[6].worldY=gp.tileSize*30;
         gp.npc[6].isAGiver=true;
 

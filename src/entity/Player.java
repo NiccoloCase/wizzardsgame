@@ -4,6 +4,8 @@ package entity;
 import main.GamePanel;
 import main.KeyHandler;
 import main.AssetSpawn;
+import object.OBJ_Door;
+
 import java.io.File;
 
 import javax.imageio.ImageIO;
@@ -17,6 +19,8 @@ public class Player extends Entity {
     public final int screenX; //where we draw player on the screen;
     public final int screenY;
     public int hasPen=0; //how many pens the player has
+    public int RoomMessageCode=0;
+    public long lastPickUpTime = 0;
     public Player(GamePanel gp, KeyHandler keyH) {
         super(gp);
 
@@ -79,6 +83,7 @@ public class Player extends Entity {
 
             // CHECK OBJECT COLLISION
             int objIndex = gp.cChecker.checkObject(this,true);
+
             pickUpObject(objIndex);
 
             //CHECK NPC COLLISION
@@ -118,6 +123,15 @@ public class Player extends Entity {
     }
     //PICKUP OBJECT METHOD
     public void pickUpObject (int i){
+        long currentTime = System.currentTimeMillis(); // Ottieni il tempo corrente in millisecondi
+
+        if (currentTime - lastPickUpTime < 300) {
+            // Se è passato meno di un secondo dall'ultima esecuzione, esci dal metodo
+            return;
+        }
+
+        // Aggiorna l'ultimo tempo di esecuzione
+        lastPickUpTime = currentTime;
         if(i!=999){ //if index = 999 we didn't touch any object
             String objectName = gp.obj[i].name;
             switch(objectName){
@@ -127,14 +141,44 @@ public class Player extends Entity {
                     gp.ui.showMessage("Pipus???");
                     break;
                 case "Door":
-                    if (hasPen > 0){
-                        gp.obj[i]=null;
-                        hasPen--;
-                        gp.ui.showMessage("You put the pipus in the door...it's open");
+                    OBJ_Door door = (OBJ_Door) gp.obj[i];
+                    if(door.collision){
+                        if (hasPen > 0){
+                            door.numAttraversamenti++;
+                            gp.obj[i].collision=false;
+                            hasPen--;
+                            gp.ui.showMessage("You put the pipus in the door...it's open");
+                            gp.ui.RoomName=door.accessToRoom;
+                        }
+                        else{
+                            gp.ui.showMessage("You better go findng another Pipus");
+                        }
                     }
-                    else{
-                        gp.ui.showMessage("You better go findng another Pipus");
+                    else {
+                        if(i==3){
+                            door.numAttraversamenti++;
+                            if(door.numAttraversamenti%2==0){
+                                gp.ui.RoomName="Piano 0";
+                            }
+                            else{
+                                gp.ui.RoomName="Aula Comunista";
+                            }
+                        }
+                        else{
+                            door.numAttraversamenti++;
+                            if(door.numAttraversamenti%2==0){
+                                door= (OBJ_Door) gp.obj[i-1];
+                                gp.ui.RoomName=door.accessToRoom;
+                            }
+                            else{
+                                gp.ui.RoomName=door.accessToRoom;
+                            }
+
+                        }
+
+
                     }
+
                     break;
                 case "Tejon":
                     gp.ui.showMessage("Mira El TeJon");

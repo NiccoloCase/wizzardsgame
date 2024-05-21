@@ -11,10 +11,11 @@ import java.text.DecimalFormat;
 //  ALL THE ON-SCREEN UI
 public class UI {
     GamePanel gp;
-    Font italic_40,arial_60B;
+    Font italic_40,arial_60B,romanic_90;
     BufferedImage penImage;
     public boolean messageOn = false;
     public String message="";
+    public String RoomName="Piano 0";
     int messageCounter =0;
     public boolean gameFinished=false;
 
@@ -26,6 +27,8 @@ public class UI {
     public UI(GamePanel gp){
         this.gp=gp;
         italic_40=new Font("Italic", Font.ITALIC, 40);
+        romanic_90=new Font("Italic", Font.CENTER_BASELINE, 90);
+
         arial_60B=new Font("Arial", Font.BOLD, 60);
         OBJ_Pen pen = new OBJ_Pen();
         penImage=pen.image;
@@ -36,7 +39,21 @@ public class UI {
         message=text;
         messageOn=true;
     }
-    public void draw(Graphics2D g2){
+    public void setRoomName(Graphics2D g3,String text){
+        g3.setFont(romanic_90);
+        g3.setColor((Color.pink) );
+        RoomName=text;
+        int textLength;
+        textLength= (int)g3.getFontMetrics().getStringBounds(text,g3).getWidth();
+        int x;
+        int y;
+        x= gp.screenWidth/2-textLength/2;
+        y=gp.screenHeight/2-(gp.tileSize*9/2);
+        g3.drawString(text,x,y);
+
+    }
+
+    public void draw(Graphics2D g2,Graphics2D g3){
         if(gameFinished){
 
             g2.setFont(italic_40);
@@ -78,7 +95,12 @@ public class UI {
             g2.drawImage(penImage,gp.tileSize/2,gp.tileSize/2,gp.tileSize,gp.tileSize,null);
             g2.drawString("x"+gp.player.hasPen,74,65);
 
+            //NOME STANZA
+            setRoomName(g3,RoomName);
+
             //TIME
+            g2.setFont(italic_40);
+            g2.setColor((Color.white) );
             playTime+=(double)1/60;
             g2.drawString("Time:"+dFormat.format(playTime),gp.tileSize*11,65);
             //MESSAGE
