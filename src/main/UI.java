@@ -93,7 +93,7 @@ public class UI {
             g2.setFont(italic_40);
             g2.setColor((Color.white) );
             g2.drawImage(penImage,gp.tileSize/2,gp.tileSize/2,gp.tileSize,gp.tileSize,null);
-            g2.drawString("x"+gp.player.hasPen,74,65);
+            g2.drawString("x"+gp.player.hasPen,120,90);
 
             //NOME STANZA
             setRoomName(g3,RoomName);
@@ -102,7 +102,7 @@ public class UI {
             g2.setFont(italic_40);
             g2.setColor((Color.white) );
             playTime+=(double)1/60;
-            g2.drawString("Time:"+dFormat.format(playTime),gp.tileSize*11,65);
+            g2.drawString("Time:"+dFormat.format(playTime),gp.tileSize*13,65);
             //MESSAGE
             if(messageOn){
                 g2.setFont(g2.getFont().deriveFont(30F));
