@@ -3,6 +3,7 @@ package entity;
 
 import main.GamePanel;
 import main.KeyHandler;
+import main.AssetSpawn;
 import java.io.File;
 
 import javax.imageio.ImageIO;
@@ -24,8 +25,8 @@ public class Player extends Entity {
         screenY = gp.screenHeight/2-(gp.tileSize/2);
 
         solidArea =new Rectangle(); //this is for collision; the rectangle hasn't the same dimension as the player for better game mechanics
-        solidArea.x=6;
-        solidArea.y=16;
+        solidArea.x=17;
+        solidArea.y=22;
         solidAreaDefaultX=solidArea.x;
         solidAreaDefaultY=solidArea.y;
         solidArea.width=22;//dimensione rettangolo soido
@@ -36,8 +37,8 @@ public class Player extends Entity {
 
     }
     public  void setDefaultValues(){
-        worldX=gp.tileSize*13; //player (starting) position on the world map; not in the display
-        worldY=gp.tileSize*40;
+        worldX=gp.tileSize*3; //player (starting) position on the world map; not in the display
+        worldY=gp.tileSize*3;
         speed=7;
         direction = "down";
     }
@@ -83,6 +84,7 @@ public class Player extends Entity {
             //CHECK NPC COLLISION
             int npcIndex = gp.cChecker.checkEntity(this,gp.npc);
             interactNPC(npcIndex);
+
 
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
             if(!collisionOn){
@@ -154,6 +156,7 @@ public class Player extends Entity {
     public void interactNPC(int i){
         if(i != 999){
             System.out.println(("you are hitting an npc!"));
+            gp.npc[i].hits++;
         }
     }
 

@@ -6,8 +6,8 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.util.Random;
 
-public class NPC_Explorer extends Entity{
-    public NPC_Explorer(GamePanel gp){
+public class NPC_BlondeWoman extends Entity{
+    public NPC_BlondeWoman(GamePanel gp){
         super(gp);
 
         direction ="down";
@@ -17,14 +17,14 @@ public class NPC_Explorer extends Entity{
 
     private void getPlayerImage() {
         try {
-            up1 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC rightback.png"));
-            up2 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC leftback.png"));
-            down1 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC rightfront.png"));
-            down2 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC leftfront.png"));
-            right1 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC rightmove.png"));
-            right2 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC rightstand.png"));
-            left1 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC leftmove.png"));
-            left2 = ImageIO.read(new File("res/NPC/Explorer/EXPNPC leftstand.png"));
+            up1 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC rightback.png"));
+            up2 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC leftfback.png"));
+            down1 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC rightfront.png"));
+            down2 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC leftfront.png"));
+            right1 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC rightmove.png"));
+            right2 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC rightstand.png"));
+            left1 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC leftmove.png"));
+            left2 = ImageIO.read(new File("res/NPC/BlondeWoman/BWNPC leftstand.png"));
         } catch (Exception e) {
             e.printStackTrace();
             // Handle the exception (e.g., log an error message or display a user-friendly message)
@@ -33,7 +33,7 @@ public class NPC_Explorer extends Entity{
     public void setAction() {
         actionLockCounter++;
 
-        if(actionLockCounter==60){
+        if(actionLockCounter==120){
             Random random = new Random();
             int i= random.nextInt(100)+1; //pick up a number from 1 to 100
 

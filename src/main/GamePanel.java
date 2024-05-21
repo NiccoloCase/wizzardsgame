@@ -37,14 +37,15 @@ public class GamePanel extends JPanel implements Runnable{
 
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
+    public AssetSpawn aSpawner= new AssetSpawn(this);
 
     Thread gameThread;
     public UI ui = new UI(this);
 
     //ENTITY AND OBJECT
     public Player player =new Player(this,keyH);
-    public SuperObject obj[] =new SuperObject[10];
-    public Entity npc[] = new Entity[10];
+    public SuperObject obj[] =new SuperObject[100];
+    public Entity npc[] = new Entity[100];
 
 
 
@@ -105,6 +106,7 @@ public class GamePanel extends JPanel implements Runnable{
                 npc[i].update();
             }
         }
+        aSpawner.npcLeaveObject(npc);
 
     }
     public void paintComponent(Graphics g){

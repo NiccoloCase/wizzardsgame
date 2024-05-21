@@ -19,6 +19,9 @@ public class Entity {
     public int solidAreaDefaultX,solidAreaDefaultY;
     public boolean collisionOn = false;
     public int actionLockCounter=0;
+    public  int hits = 0; //la uso per controllare la prima collisione tra player e npc
+    public boolean isAGiver=false; //stabilisce quali NPC droppano item
+    public int itemToGive=0; //lo uso per stabilire quale item viene droppato
 
     public Entity(GamePanel gp){
         this.gp = gp;
