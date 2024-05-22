@@ -119,19 +119,47 @@ public class Player extends Entity {
                 spriteCounter =0;
             }
         }
-
+        //CHECK ROOM TO DISPLAY
+        if(worldY<9*gp.tileSize && worldX<23*gp.tileSize){
+            gp.ui.RoomName="Piano 0";
+        } else if (worldY<9*gp.tileSize) {
+            gp.ui.RoomName="Aula Comunista";
+        } else if (worldY<12*gp.tileSize) {
+            gp.ui.RoomName="Corridoio 0";
+        } else if (worldY<21*gp.tileSize && worldX<25*gp.tileSize){
+            gp.ui.RoomName="Piano 1";
+        } else if (worldY<21*gp.tileSize) {
+            gp.ui.RoomName="Biblioteja Novoli";
+        } else if (worldY<24*gp.tileSize) {
+            gp.ui.RoomName="Corridoio 1";
+        } else if (worldY<33*gp.tileSize && worldX<21*gp.tileSize) {
+            gp.ui.RoomName="Piano 2";
+        } else if (worldY<33*gp.tileSize) {
+            gp.ui.RoomName="Aula 217";
+        } else if (worldY<36*gp.tileSize) {
+            gp.ui.RoomName="Corridoio 2";
+        } else if (worldY<45*gp.tileSize && worldX<22*gp.tileSize) {
+            gp.ui.RoomName="Piano 3";
+        } else if (worldY<45*gp.tileSize) {
+            gp.ui.RoomName="Casa Caps";
+        } else if (worldY<48*gp.tileSize) {
+            gp.ui.RoomName="Corridoio 3";
+        } else if (worldY<58*gp.tileSize && worldX<15*gp.tileSize) {
+            gp.ui.RoomName="Piano 4";
+        } else if (worldY<58*gp.tileSize) {
+            gp.ui.RoomName="Palestra CUS";
+        } else if (worldY<61*gp.tileSize) {
+            gp.ui.RoomName="Corridoio 4";
+        } else if (worldY<70*gp.tileSize && worldX<23*gp.tileSize) {
+            gp.ui.RoomName="Piano 5";
+        } else if (worldY<70*gp.tileSize) {
+            gp.ui.RoomName="SH";
+        } else {
+            gp.ui.RoomName="Corridoio 5";
+        }
     }
     //PICKUP OBJECT METHOD
     public void pickUpObject (int i){
-        long currentTime = System.currentTimeMillis(); // Ottieni il tempo corrente in millisecondi
-
-        if (currentTime - lastPickUpTime < 300) {
-            // Se è passato meno di un secondo dall'ultima esecuzione, esci dal metodo
-            return;
-        }
-
-        // Aggiorna l'ultimo tempo di esecuzione
-        lastPickUpTime = currentTime;
         if(i!=999){ //if index = 999 we didn't touch any object
             String objectName = gp.obj[i].name;
             switch(objectName){
@@ -144,41 +172,15 @@ public class Player extends Entity {
                     OBJ_Door door = (OBJ_Door) gp.obj[i];
                     if(door.collision){
                         if (hasPen > 0){
-                            door.numAttraversamenti++;
                             gp.obj[i].collision=false;
                             hasPen--;
                             gp.ui.showMessage("You put the pipus in the door...it's open");
-                            gp.ui.RoomName=door.accessToRoom;
+
                         }
                         else{
                             gp.ui.showMessage("You better go findng another Pipus");
                         }
                     }
-                    else {
-                        if(i==3){
-                            door.numAttraversamenti++;
-                            if(door.numAttraversamenti%2==0){
-                                gp.ui.RoomName="Piano 0";
-                            }
-                            else{
-                                gp.ui.RoomName="Aula Comunista";
-                            }
-                        }
-                        else{
-                            door.numAttraversamenti++;
-                            if(door.numAttraversamenti%2==0){
-                                door= (OBJ_Door) gp.obj[i-1];
-                                gp.ui.RoomName=door.accessToRoom;
-                            }
-                            else{
-                                gp.ui.RoomName=door.accessToRoom;
-                            }
-
-                        }
-
-
-                    }
-
                     break;
                 case "Tejon":
                     gp.ui.showMessage("Mira El TeJon");

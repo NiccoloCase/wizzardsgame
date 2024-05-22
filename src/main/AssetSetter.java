@@ -23,7 +23,7 @@ public class AssetSetter {
         gp.obj[3] = new OBJ_Door("Aula Comunista"); //ingresso stanza 0
         gp.obj[3].worldX = 24 * gp.tileSize;
         gp.obj[3].worldY = 4 * gp.tileSize;
-        gp.obj[3].solidArea=new Rectangle(0,0,48,48);
+
 
         gp.obj[4] = new OBJ_Door("Corridoio 0"); //uscita stanza 0
         gp.obj[4].worldX = 28 * gp.tileSize;
@@ -207,10 +207,10 @@ public class AssetSetter {
         gp.npc[15].worldY=gp.tileSize*56;
         gp.npc[15].isAGiver=true;
 
-        gp.npc[16] = new NPC_BlondeWoman(gp); //stanza 4
+        /*gp.npc[16] = new NPC_BlondeWoman(gp); //stanza 4
         gp.npc[16].worldX=gp.tileSize*28;
         gp.npc[16].worldY=gp.tileSize*57;
-        gp.npc[16].isAGiver=true;
+        gp.npc[16].isAGiver=true;*/
 
         gp.npc[17] = new NPC_BlondeWoman(gp);//corridoio 4
         gp.npc[17].worldX=gp.tileSize*30;
@@ -222,13 +222,13 @@ public class AssetSetter {
         gp.npc[18].worldY=gp.tileSize*67;
         gp.npc[18].isAGiver=true;
 
-        gp.npc[19] = new NPC_BlondeWoman(gp); //stanza 5
+       /* gp.npc[19] = new NPC_BlondeWoman(gp); //stanza 5
         gp.npc[19].worldX=gp.tileSize*28;
         gp.npc[19].worldY=gp.tileSize*67;
         gp.npc[19].isAGiver=true;
 
         //NPC Pen GIVER BONUS
-       /* gp.npc[20] = new NPC_Explorer(gp); // bonus pre stanza 0
+        gp.npc[20] = new NPC_Explorer(gp); // bonus pre stanza 0
         gp.npc[20].worldX=gp.tileSize*12;
         gp.npc[20].worldY=gp.tileSize*7;
         gp.npc[20].isAGiver=true;
@@ -337,7 +337,7 @@ public class AssetSetter {
 
         gp.npc[42] = new NPC_Explorer(gp); //stanza 2
         gp.npc[42].worldX=gp.tileSize*30;
-        gp.npc[42].worldY=gp.tileSize*26;
+        gp.npc[42].worldY=gp.tileSize*29;
 
         gp.npc[43] = new NPC_BlondeWoman(gp);//corridoio 2
         gp.npc[43].worldX=gp.tileSize*3;
