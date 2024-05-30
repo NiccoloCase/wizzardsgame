@@ -33,7 +33,7 @@ public class NPC_BlondeWoman extends Entity{
     public void setAction() {
         actionLockCounter++;
 
-        if(actionLockCounter==120){
+        if(actionLockCounter==60){
             Random random = new Random();
             int i= random.nextInt(100)+1; //pick up a number from 1 to 100
 

@@ -252,6 +252,12 @@ public class AssetSetter {
         gp.npc[23].isAGiver=true;
         gp.npc[23].itemToGive=1;
 
+        gp.npc[75] = new NPC_BlondeWoman(gp); //stanza 3
+        gp.npc[75].worldX=gp.tileSize*28;
+        gp.npc[75].worldY=gp.tileSize*42;
+        gp.npc[75].isAGiver=true;
+        gp.npc[75].itemToGive=1;
+
         // NPC NOT GIVER
         gp.npc[24] = new NPC_BlondeWoman(gp); //pre stanza 0
         gp.npc[24].worldX=gp.tileSize*11;
