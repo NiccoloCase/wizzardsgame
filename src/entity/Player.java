@@ -123,7 +123,7 @@ public class Player extends Entity {
         if(worldY<9*gp.tileSize && worldX<23*gp.tileSize){
             gp.ui.RoomName="Piano 0";
         } else if (worldY<9*gp.tileSize) {
-            gp.ui.RoomName="Aula Comunista";
+            gp.ui.RoomName="Aula Rossa";
         } else if (worldY<12*gp.tileSize) {
             gp.ui.RoomName="Corridoio 0";
         } else if (worldY<21*gp.tileSize && worldX<25*gp.tileSize){
@@ -166,7 +166,7 @@ public class Player extends Entity {
                 case "Pen":
                     hasPen++;
                     gp.obj[i]=null;
-                    gp.ui.showMessage("Pipus???");
+                    gp.ui.showMessage("key taken");
                     break;
                 case "Door":
                     OBJ_Door door = (OBJ_Door) gp.obj[i];
@@ -174,11 +174,11 @@ public class Player extends Entity {
                         if (hasPen > 0){
                             gp.obj[i].collision=false;
                             hasPen--;
-                            gp.ui.showMessage("You put the pipus in the door...it's open");
+                            gp.ui.showMessage("You put the key in the door...it's open");
 
                         }
                         else{
-                            gp.ui.showMessage("You better go findng another Pipus");
+                            gp.ui.showMessage("You better go findng another key");
                         }
                     }
                     break;
